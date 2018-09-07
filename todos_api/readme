@@ -1,0 +1,37 @@
+/* Get the package.json file by */
+npm init
+
+/* install express */
+npm install --save express
+
+/* Using MongoDB and install on Mac */
+brew update
+brew install mongodb
+sudo mkdir -p /data/db
+
+Make sure that the /data/db directory has the right permissions by running
+
+> sudo chown -R `id -un` /data/db
+> # Enter your password
+
+
+echo 'mongod --bind_ip=$IP --dbpath=data --nojournal --rest "$@"' > mongod
+// chmod a+x mongod (dint use)
+
+/*Run the Mongo daemon, in one of your terminal windows run */
+mongod
+
+
+npm install mongoose --save
+
+
+Models folder
+index.js - connects to mongoose
+todo.js - logic to create the todo schema
+
+/* Open a terminal to start the mongodb */
+mongod
+
+/* Open another terminal to start nodemon */
+nodemon index.js
+
